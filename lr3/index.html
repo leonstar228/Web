@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Лабораторна робота №3: Функції в JavaScript</h1>
+            <p>Рівень 10-12 балів: Генератори, замикання та контекст</p>
+        </header>
+
+        <!-- Завдання 1: Генератор випадкових чисел -->
+        <section class="task-section">
+            <div class="level-indicator">Завдання 1: Генератор випадкових чисел</div>
+
+            <div class="task-description">
+                <h3>Генератор випадкових чисел</h3>
+                <p>Створіть генератор, який повертає нове випадкове число при кожному виклику. Кожен клік по кнопці дає
+                    нове випадкове число у визначених межах.</p>
+            </div>
+
+            <div class="input-group">
+                <label for="minValue">Мінімальне значення:</label>
+                <input type="number" id="minValue" value="1" min="0" max="1000">
+            </div>
+
+            <div class="input-group">
+                <label for="maxValue">Максимальне значення:</label>
+                <input type="number" id="maxValue" value="100" min="1" max="1000">
+            </div>
+
+            <div class="controls">
+                <button class="btn" id="nextNumber">Згенерувати число</button>
+                <button class="btn btn-warning" id="resetGenerator">Скинути</button>
+            </div>
+
+            <div class="output">
+                <div class="number-display" id="randomNumberOutput">--</div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="generatedCount">0</div>
+                    <div class="stat-label">Згенеровано чисел</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="lastNumber">--</div>
+                    <div class="stat-label">Останнє число</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Завдання 2: Генератор паролів -->
+        <section class="task-section">
+            <div class="level-indicator">Завдання 2: Генератор паролів</div>
+
+            <div class="task-description">
+                <h3>Генератор паролів</h3>
+                <p>Реалізуйте генератор, який послідовно приймає символи через next() і формує пароль. Кожен виклик
+                    next() з аргументом додає символ до паролю; якщо аргумент 'done' - генератор завершується і повертає
+                    готовий пароль.</p>
+            </div>
+
+            <div class="input-group">
+                <label for="charInput">Введіть символ для паролю:</label>
+                <input type="text" id="charInput" maxlength="1" placeholder="Введіть один символ">
+            </div>
+
+            <div class="controls">
+                <button class="btn" id="addChar">Додати символ</button>
+                <button class="btn btn-warning" id="generateRandomChar">Випадковий символ</button>
+                <button class="btn btn-success" id="finishPassword">Завершити пароль</button>
+            </div>
+
+            <div class="character-list" id="charList"></div>
+
+            <div class="strength-meter">
+                <div class="strength-fill" id="strengthFill"></div>
+            </div>
+
+            <div class="output">
+                <div class="password-display" id="passwordDisplay">Пароль буде тут...</div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="passwordLength">0</div>
+                    <div class="stat-label">Довжина паролю</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="passwordStrength">Слабкий</div>
+                    <div class="stat-label">Складність</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Завдання 3: Генератор діалогів -->
+        <section class="task-section">
+            <div class="level-indicator">Завдання 3: Генератор діалогів</div>
+
+            <div class="task-description">
+                <h3>Генератор діалогів</h3>
+                <p>Створіть генератор, який у кожному кроці yield повертає запит до користувача. На кожному кроці
+                    отримуйте відповідь користувача та передавайте її назад через next(answer).</p>
+            </div>
+
+            <div class="chat-container" id="chatContainer">
+                <div class="message bot-message">Оберіть "Почати розмову" для початку діалогу з ботом</div>
+            </div>
+
+            <div class="input-group">
+                <label for="userInput">Ваша відповідь:</label>
+                <input type="text" id="userInput" placeholder="Введіть вашу відповідь...">
+            </div>
+
+            <div class="controls">
+                <button class="btn" id="sendMessage">Надіслати</button>
+                <button class="btn btn-success" id="startChat">Почати розмову</button>
+                <button class="btn btn-warning" id="resetChat">Нова розмова</button>
+            </div>
+        </section>
+
+        <!-- Завдання 4: Втрата контексту методом -->
+        <section class="task-section">
+            <div class="level-indicator">Завдання 4: Втрата контексту методом</div>
+
+            <div class="task-description">
+                <h3>Втрата контексту методом</h3>
+                <p>Створіть об'єкт з методом, який використовує this. Продемонструйте втрату контексту при простому
+                    присвоєнні функції та реалізуйте способи фіксації контексту.</p>
+            </div>
+
+            <div class="user-card">
+                <div class="user-name" id="userNameDisplay">Ім'я користувача: ...</div>
+                <div class="user-greeting" id="userGreeting">Оберіть спосіб виклику методу</div>
+            </div>
+
+            <div class="test-buttons">
+                <button class="btn btn-danger" id="wrongMethod">Неправильний виклик</button>
+                <button class="btn btn-success" id="correctMethodBind">Правильно: bind()</button>
+                <button class="btn btn-success" id="correctMethodArrow">Правильно: стрілкова функція</button>
+                <button class="btn btn-success" id="correctMethodWrapper">Правильно: обгортка</button>
+            </div>
+
+            <div class="output" id="methodResult">
+                Результат буде показаний тут...
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="testsCount">0</div>
+                    <div class="stat-label">Проведено тестів</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="successCount">0</div>
+                    <div class="stat-label">Успішних викликів</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <script src="./assets/scripts/script.js"></script>
+</body>
+
+</html>
