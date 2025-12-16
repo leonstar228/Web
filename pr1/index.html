@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аналіз замовлень та продажів</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-chart-line"></i> Аналіз замовлень та продажів</h1>
+            <p class="subtitle">Демонстрація роботи з масивами об'єктів у JavaScript</p>
+        </header>
+        
+        <div class="tasks-container">
+            <div class="task-card">
+                <div class="task-header">
+                    <div class="task-number">5</div>
+                    <h2 class="task-title">Фільтрація замовлень клієнтів</h2>
+                </div>
+                
+                <div class="section-title">
+                    <i class="fas fa-shopping-cart"></i> Дані замовлень
+                </div>
+                <div class="data-section">
+                    <pre id="ordersData"></pre>
+                </div>
+                
+                <div class="section-title">
+                    <i class="fas fa-calculator"></i> Розрахунок витрат клієнта
+                </div>
+                <div class="controls">
+                    <select id="customerSelect">
+                        <option value="">Оберіть клієнта</option>
+                    </select>
+                    <button id="calculateSpent">
+                        <i class="fas fa-calculator"></i> Розрахувати суму
+                    </button>
+                </div>
+                
+                <div id="customerResult" class="result">
+                    <h3><i class="fas fa-user-check"></i> Результат</h3>
+                    <p>Загальна сума витрат клієнта <span id="customerName" class="highlight"></span>: 
+                       <span id="totalSpent" class="result-value"></span> грн</p>
+                </div>
+            </div>
+            
+            <div class="task-card">
+                <div class="task-header">
+                    <div class="task-number">6</div>
+                    <h2 class="task-title">Аналіз продажів товарів</h2>
+                </div>
+                
+                <div class="section-title">
+                    <i class="fas fa-box-open"></i> Дані товарів та покупок
+                </div>
+                <div class="data-section">
+                    <pre id="productsData"></pre>
+                </div>
+                
+                <div class="section-title">
+                    <i class="fas fa-chart-bar"></i> Аналіз доходів від продажів
+                </div>
+                <div class="controls">
+                    <button id="calculateSales">
+                        <i class="fas fa-chart-pie"></i> Розрахувати дохід від продажів
+                    </button>
+                </div>
+                
+                <div id="salesResult" class="result">
+                    <h3><i class="fas fa-chart-line"></i> Загальний дохід від продажів</h3>
+                    <div id="salesDetails"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="combined-results">
+            <h2 class="section-title"><i class="fas fa-trophy"></i> Підсумки та аналіз</h2>
+            
+            <div class="controls">
+                <button id="showAllAnalysis">
+                    <i class="fas fa-chart-bar"></i> Показати повний аналіз
+                </button>
+            </div>
+            
+            <div id="analysisResults" class="results-grid"></div>
+        </div>
+    </div>
+
+    <script src="./assets/scripts/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</body>
+</html>
