@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота: Об'єкти та масиви</title>
+    <link rel="stylesheet" href="./assets/styles/main.css">
+</head>
+<body>
+    <header>
+        <h1>Лабораторна робота: Робота з об'єктами та масивами</h1>
+        <p>Тема: Робота з об'єктами та масивами в JavaScript</p>
+    </header>
+    
+    <div class="container">
+        <section class="task-section task-1">
+            <h2>Завдання 1: Робота з об'єктами</h2>
+            
+            <h3>1. Створення об'єкта book</h3>
+            <div class="code-block">
+const book = {
+    title: "Harry Potter and the Sorcerer's Stone",
+    author: "J.K. Rowling",
+    year: 1997,
+    isRead: true
+};</div>
+            
+            <h3>2. Метод bookInfo</h3>
+            <div class="code-block">
+book.bookInfo = function() {
+    const readStatus = this.isRead ? "Так" : "Ні";
+    return `Назва: ${this.title}, Автор: ${this.author}, 
+            Рік видання: ${this.year}, Прочитана: ${readStatus}`;
+};</div>
+            
+            <h3>3. Зміна властивості isRead та виклик методу</h3>
+            <div class="code-block">
+book.isRead = !book.isRead;</div>
+            
+            <div class="result-box">
+                <h3>Результат виклику bookInfo():</h3>
+                <div id="book1-result"></div>
+            </div>
+            
+            <div class="button-group">
+                <button id="createBookBtn">Створити об'єкт book</button>
+                <button id="addMethodBtn">Додати метод bookInfo</button>
+                <button id="toggleReadBtn">Змінити статус читання</button>
+                <button id="callMethodBtn">Викликати bookInfo()</button>
+            </div>
+        </section>
+        
+        <section class="task-section task-2">
+            <h2>Завдання 2: Робота з масивами та об'єктами</h2>
+            
+            <h3>1. Створення масиву library</h3>
+            <div class="code-block">
+const library = [
+    {
+        title: "Harry Potter and the Sorcerer's Stone",
+        author: "J.K. Rowling",
+        year: 1997,
+        isRead: true,
+        bookInfo: function() {
+            const readStatus = this.isRead ? "Так" : "Ні";
+            return `Назва: ${this.title}, Автор: ${this.author}, 
+                    Рік видання: ${this.year}, Прочитана: ${readStatus}`;
+        }
+    },
+    {
+        title: "The Hobbit",
+        author: "J.R.R. Tolkien",
+        year: 1937,
+        isRead: false,
+        bookInfo: function() {
+            const readStatus = this.isRead ? "Так" : "Ні";
+            return `Назва: ${this.title}, Автор: ${this.author}, 
+                    Рік видання: ${this.year}, Прочитана: ${readStatus}`;
+        }
+    },
+    {
+        title: "1984",
+        author: "George Orwell",
+        year: 1949,
+        isRead: true,
+        bookInfo: function() {
+            const readStatus = this.isRead ? "Так" : "Ні";
+            return `Назва: ${this.title}, Автор: ${this.author}, 
+                    Рік видання: ${this.year}, Прочитана: ${readStatus}`;
+        }
+    }
+];</div>
+            
+            <h3>2. Функція displayLibrary</h3>
+            <div class="code-block">
+function displayLibrary(libraryArray) {
+    console.log("=== БІБЛІОТЕКА КНИГ ===");
+    libraryArray.forEach((book, index) => {
+        console.log(`Книга ${index + 1}: ${book.bookInfo()}`);
+    });
+}</div>
+            
+            <h3>3. Додавання нової книги за допомогою push()</h3>
+            <div class="code-block">
+library.push({
+    title: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+    year: 1925,
+    isRead: false,
+    bookInfo: function() {
+        const readStatus = this.isRead ? "Так" : "Ні";
+        return `Назва: ${this.title}, Автор: ${this.author}, 
+                Рік видання: ${this.year}, Прочитана: ${readStatus}`;
+    }
+});</div>
+            
+            <div class="result-box">
+                <h3>Бібліотека книг:</h3>
+                <div id="library-output"></div>
+            </div>
+            
+            <div class="button-group">
+                <button id="createLibraryBtn">Створити масив library</button>
+                <button id="displayLibraryBtn">Вивести бібліотеку</button>
+                <button id="addBookBtn">Додати нову книгу (The Great Gatsby)</button>
+            </div>
+        </section>
+        
+        <section class="task-section task-3">
+            <h2>Завдання 3: Робота з методами масивів</h2>
+            
+            <h3>1. Сортування масиву за роком видання</h3>
+            <div class="code-block">
+const sortedByYear = [...library].sort((a, b) => a.year - b.year);
+console.log("Відсортовано за роком видання:");
+sortedByYear.forEach(book => console.log(book.bookInfo()));</div>
+            
+            <h3>2. Фільтрація непрочитаних книг</h3>
+            <div class="code-block">
+const unreadBooks = library.filter(book => !book.isRead);
+console.log("Непрочитані книги:");
+unreadBooks.forEach(book => console.log(book.bookInfo()));</div>
+            
+            <h3>3. Пошук книги автора "J.R.R. Tolkien"</h3>
+            <div class="code-block">
+const tolkienBook = library.find(book => book.author === "J.R.R. Tolkien");
+console.log("Книга автора J.R.R. Tolkien:");
+if (tolkienBook) {
+    console.log(tolkienBook.bookInfo());
+} else {
+    console.log("Книгу не знайдено");
+}</div>
+            
+            <div class="console">
+                <div class="console-header">Консоль JavaScript:</div>
+                <div id="console-output"></div>
+            </div>
+            
+            <div class="button-group">
+                <button id="sortByYearBtn">Сортувати за роком</button>
+                <button id="filterUnreadBtn">Фільтрувати непрочитані</button>
+                <button id="findTolkienBtn">Знайти книгу Толкіна</button>
+                <button id="clearConsoleBtn">Очистити консоль</button>
+            </div>
+        </section>
+        
+        <section class="task-section task-4">
+            <h2>Завдання 4: Взаємодія з користувачем</h2>
+            
+            <h3>1. Додавання нової книги через форму</h3>
+            
+            <div class="form-group">
+                <label for="title">Назва книги:</label>
+                <input type="text" id="title" placeholder="Введіть назву книги">
+            </div>
+            
+            <div class="form-group">
+                <label for="author">Автор:</label>
+                <input type="text" id="author" placeholder="Введіть автора">
+            </div>
+            
+            <div class="form-group">
+                <label for="year">Рік видання:</label>
+                <input type="number" id="year" placeholder="Введіть рік видання">
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="isRead">
+                <label for="isRead">Книга прочитана</label>
+            </div>
+            
+            <div class="button-group">
+                <button id="addBookFormBtn">Додати книгу до бібліотеки</button>
+                <button id="showAllBooksBtn">Показати всі книги</button>
+            </div>
+            
+            <div class="result-box">
+                <h3>Оновлена бібліотека:</h3>
+                <div id="updated-library"></div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>Лабораторна робота з JavaScript: Робота з об'єктами та масивами</p>
+        <p>Виконано для навчальних цілей</p>
+    </footer>
+
+    <script src="./assets/scripts/main.js"></script>
+</body>
+</html>

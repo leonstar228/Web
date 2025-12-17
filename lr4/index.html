@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фільмотека</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-film"></i> Фільмотека</h1>
+        </header>
+
+        <div class="dashboard">
+            <div class="stats">
+                <div class="stat-card">
+                    <h3><i class="fas fa-video"></i> Всього фільмів</h3>
+                    <p id="total-movies">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3><i class="fas fa-eye"></i> Переглянуто</h3>
+                    <p id="watched-movies">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3><i class="fas fa-eye-slash"></i> Не переглянуто</h3>
+                    <p id="unwatched-movies">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3><i class="fas fa-calendar-alt"></i> Середній рік</h3>
+                    <p id="average-year">0</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <h2><i class="fas fa-bars"></i> Меню</h2>
+                <div class="menu">
+                    <button id="btn-show-all"><i class="fas fa-list"></i> Всі фільми</button>
+                    <button id="btn-add-movie"><i class="fas fa-plus-circle"></i> Додати фільм</button>
+                    <button id="btn-unwatched"><i class="fas fa-eye-slash"></i> Непереглянуті</button>
+                    <button id="btn-statistics"><i class="fas fa-chart-bar"></i> Статистика</button>
+                    <button id="btn-sort-year"><i class="fas fa-sort-amount-down"></i> Сортувати за роком</button>
+                    <button id="btn-sort-title"><i class="fas fa-sort-alpha-down"></i> Сортувати за назвою</button>
+                </div>
+
+                <div class="search-section">
+                    <h3><i class="fas fa-search"></i> Пошук</h3>
+                    <input type="text" id="search-title" placeholder="Назва фільму...">
+                    <button id="btn-search-title"><i class="fas fa-search"></i> Знайти</button>
+                    
+                    <input type="text" id="search-genre" placeholder="Жанр...">
+                    <button id="btn-search-genre"><i class="fas fa-search"></i> По жанру</button>
+                    
+                    <input type="text" id="search-director" placeholder="Режисер...">
+                    <button id="btn-search-director"><i class="fas fa-search"></i> По режисеру</button>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="content-header">
+                    <h2 id="content-title"><i class="fas fa-video"></i> Всі фільми</h2>
+                    <div class="actions">
+                        <button id="btn-mark-watched" class="secondary"><i class="fas fa-check-circle"></i> Позначити як переглянутий</button>
+                    </div>
+                </div>
+
+                <div class="movies-container" id="movies-container">
+                    <div class="no-movies">
+                        <i class="fas fa-film fa-3x"></i>
+                        <p>Фільми завантажуються...</p>
+                    </div>
+                </div>
+
+                <div class="console">
+                    <h3><i class="fas fa-terminal"></i> Консоль подій</h3>
+                    <div class="console-output" id="console-output">
+                        <div class="console-message">Ласкаво просимо до фільмотеки! Оберіть дію з меню.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="add-movie-modal">
+            <div class="modal-content">
+                <h2><i class="fas fa-plus-circle"></i> Додати новий фільм</h2>
+                <form id="movie-form">
+                    <div class="form-group">
+                        <label for="movie-title"><i class="fas fa-heading"></i> Назва фільму:</label>
+                        <input type="text" id="movie-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="movie-director"><i class="fas fa-user"></i> Режисер:</label>
+                        <input type="text" id="movie-director" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="movie-year"><i class="fas fa-calendar"></i> Рік виходу:</label>
+                        <input type="number" id="movie-year" min="1900" max="2024" value="2024" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="movie-genre"><i class="fas fa-tags"></i> Жанр(и):</label>
+                        <input type="text" id="movie-genre" placeholder="драма, кримінал..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="movie-watched"><i class="fas fa-eye"></i> Статус перегляду:</label>
+                        <select id="movie-watched">
+                            <option value="true">Переглянуто</option>
+                            <option value="false">Не переглянуто</option>
+                        </select>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-primary"><i class="fas fa-save"></i> Зберегти</button>
+                        <button type="button" id="btn-cancel" class="btn-secondary"><i class="fas fa-times"></i> Скасувати</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="modal" id="mark-watched-modal">
+            <div class="modal-content">
+                <h2><i class="fas fa-check-circle"></i> Позначити фільм як переглянутий</h2>
+                <div class="form-group">
+                    <label for="movie-to-mark">Введіть назву фільму:</label>
+                    <input type="text" id="movie-to-mark" placeholder="Назва фільму...">
+                </div>
+                <div class="form-buttons">
+                    <button id="btn-mark-confirm" class="btn-primary"><i class="fas fa-check"></i> Позначити</button>
+                    <button id="btn-mark-cancel" class="btn-secondary"><i class="fas fa-times"></i> Скасувати</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/scripts/film.js"></script>
+</body>
+</html>
