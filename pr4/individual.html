@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Індивідуальне: Карта з маркерами</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #map { height: 500px; margin: 20px 0; border: 2px solid #ccc; border-radius: 8px; }
+        .controls { background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 10px 0; }
+        button, input { padding: 8px 12px; margin: 5px; }
+        input { width: 150px; }
+        .marker-list { max-height: 200px; overflow-y: auto; border: 1px solid #ddd; padding: 10px; }
+        .marker-item { padding: 5px; border-bottom: 1px solid #eee; }
+    </style>
+</head>
+<body>
+    <h1>Індивідуальне завдання: Карта з маркерами</h1>
+    
+    <div class="controls">
+        <button onclick="getCurrentLocation()">Додати мою позицію</button>
+        <button onclick="startTracking()">Почати автоматичне додавання</button>
+        <button onclick="stopTracking()">Зупинити</button>
+        <button onclick="clearAllMarkers()">Очистити всі маркери</button>
+    </div>
+    
+    <div class="controls">
+        <input type="text" id="destLat" placeholder="Широта (напр. 50.45)" value="50.4501">
+        <input type="text" id="destLng" placeholder="Довгота (напр. 30.52)" value="30.5234">
+        <button onclick="addDestinationMarker()">Додати маркер</button>
+        <button onclick="centerToDestination()">Центрувати карту</button>
+    </div>
+    
+    <div id="map"></div>
+    
+    <div>
+        <h3>Список маркерів:</h3>
+        <div id="markerList" class="marker-list"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./assets/scripts/individual.js"></script>
+</body>
+</html>

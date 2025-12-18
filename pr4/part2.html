@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Частина 2: Відслідковування позиції</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .controls { margin: 20px 0; }
+        button { padding: 10px 20px; margin: 5px; font-size: 16px; cursor: pointer; }
+        .info { background: #f0f8ff; padding: 15px; border-radius: 5px; margin: 10px 0; }
+        .status { color: #666; font-style: italic; }
+    </style>
+</head>
+<body>
+    <h1>Частина 2: Відслідковування позиції</h1>
+    
+    <div class="controls">
+        <button id="watch">Почати відслідковування</button>
+        <button id="clearWatch">Зупинити відслідковування</button>
+    </div>
+    
+    <div class="info">
+        <div id="location">Координати будуть тут...</div>
+        <div id="distance">Відстань до коледжу буде тут...</div>
+        <div id="accuracy">Точність: --</div>
+        <div id="status" class="status">Статус: Очікування...</div>
+    </div>
+
+    <script src="./assets/scripts/part2.js"></script>
+</body>
+</html>

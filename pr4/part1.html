@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Частина 1: Поточна геолокація</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .info { background: #f5f5f5; padding: 15px; border-radius: 5px; margin: 10px 0; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Частина 1: Поточна геолокація</h1>
+    
+    <button onclick="getMyLocation()">Отримати моє місцезнаходження</button>
+    
+    <div class="info">
+        <div id="location">Ваше місцезнаходження буде тут.</div>
+        <div id="distance">Відстань до коледжу буде тут.</div>
+        <div id="accuracy">Точність визначення: --</div>
+    </div>
+
+    <script src="./assets/scripts/part1.js"></script>
+</body>
+</html>
