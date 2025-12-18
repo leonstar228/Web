@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-генератор: border-radius</title>
+    <link rel="stylesheet" href="./assets/styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSS-генератор: border-radius</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="rtl">Верхній лівий радіус:</label>
+                <input type="range" id="rtl" min="0" max="100" value="0" oninput="generate()">
+                <input type="text" id="ttl" value="0">
+            </div>
+            
+            <div class="control-group">
+                <label for="rtr">Верхній правий радіус:</label>
+                <input type="range" id="rtr" min="0" max="100" value="0" oninput="generate()">
+                <input type="text" id="ttr" value="0">
+            </div>
+            
+            <div class="control-group">
+                <label for="rbr">Нижній правий радіус:</label>
+                <input type="range" id="rbr" min="0" max="100" value="0" oninput="generate()">
+                <input type="text" id="tbr" value="0">
+            </div>
+            
+            <div class="control-group">
+                <label for="rbl">Нижній лівий радіус:</label>
+                <input type="range" id="rbl" min="0" max="100" value="0" oninput="generate()">
+                <input type="text" id="tbl" value="0">
+            </div>
+        </div>
+        
+        <div class="result-container">
+            <div class="result-block">
+                <h2>Результат заокруглення:</h2>
+                <div id="block"></div>
+            </div>
+            
+            <div class="code-block">
+                <h2>Згенерований CSS-код:</h2>
+                <textarea id="css-code" rows="6" readonly></textarea>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./assets/scripts/main.js"></script>
+</body>
+</html>

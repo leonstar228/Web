@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS-генератор (Варіант 2)</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+</head>
+<body>
+    <div id="tabs">
+        <div class="tab whiteborder">Вкладка 1: border-radius</div>
+        <div class="tab">Вкладка 2: background-repeat</div>
+        <div class="tab">Вкладка 3: background-size</div>
+        <div class="tabContent show">
+            <h2>Генератор border-radius</h2>
+            <div class="control-group">
+                <label>Верхній лівий: <span id="v-tl">0</span>px</label>
+                <input type="range" id="rtl" min="0" max="100" value="0">
+            </div>
+            <div class="control-group">
+                <label>Верхній правий: <span id="v-tr">0</span>px</label>
+                <input type="range" id="rtr" min="0" max="100" value="0">
+            </div>
+            <div class="control-group">
+                <label>Нижній правий: <span id="v-br">0</span>px</label>
+                <input type="range" id="rbr" min="0" max="100" value="0">
+            </div>
+            <div class="control-group">
+                <label>Нижній лівий: <span id="v-bl">0</span>px</label>
+                <input type="range" id="rbl" min="0" max="100" value="0">
+            </div>
+            <div id="block"></div>
+            <textarea id="cssCode" readonly></textarea>
+        </div>
+        <div class="tabContent hide">
+            <h2>Генератор background-repeat</h2>
+            <div class="control-group">
+                <label>Виберіть значення:</label>
+                <select id="bg-repeat">
+                    <option value="repeat">repeat</option>
+                    <option value="repeat-x">repeat-x</option>
+                    <option value="repeat-y">repeat-y</option>
+                    <option value="no-repeat">no-repeat</option>
+                    <option value="space">space</option>
+                    <option value="round">round</option>
+                </select>
+            </div>
+            <div id="block2"></div>
+            <textarea id="cssCode2" readonly></textarea>
+        </div>
+        <div class="tabContent hide">
+            <h2>Генератор background-size</h2>
+            <div class="control-group">
+                <label>Ширина: <span id="size-width">100</span>px</label>
+                <input type="range" id="bg-width" min="10" max="300" value="100">
+            </div>
+            <div class="control-group">
+                <label>Висота: <span id="size-height">100</span>px</label>
+                <input type="range" id="bg-height" min="10" max="300" value="100">
+            </div>
+            <div id="block3"></div>
+            <textarea id="cssCode3" readonly></textarea>
+        </div>
+    </div>
+    <script src="./assets/scripts/script.js"></script>
+</body>
+</html>
