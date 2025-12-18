@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог пральних машин</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="cart-icon" id="cartIcon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </div>
+    </header>
+
+    <main>
+        <h1>Обов'язково додайте своє замовлення</h1>
+        <div class="container">
+            <div class="slide left">&lt;</div>
+            
+            <div class="box_good" data-id="1" data-name="Пральна машина Vestfrost" data-price="12000">
+                <div class="label new">Новинка</div>
+                <div class="catagory">
+                    <h2>Vestfrost</h2>
+                </div>
+                <hr>
+                <div class="box_img">
+                    <img src="./img/machine_1.png" alt="Пральна машина Vestfrost">
+                </div>
+                <h3>
+                    <a href="https://comfy.ua/ua/stiral-naja-mashina-vestfrost-mwm105t1amy.html" target="_blank" rel="noopener noreferrer">
+                        Пральна машина Vestfrost
+                    </a>
+                </h3>
+                <div class="box_price">
+                    <p class="price">12 000 грн</p>
+                </div>
+                <button class="button add-to-cart" data-id="1">У корзину</button>
+            </div>
+            
+            <div class="box_good" data-id="2" data-name="Пральна машина BEKO + Сушильний автомат BEKO" data-price="25000">
+                <div class="catagory">
+                    <h2>Подарунковий набір</h2>
+                </div>
+                <hr>
+                <div class="box_img">
+                    <img src="./img/set_1.png" alt="Пральна машина BEKO + Сушильний автомат BEKO">
+                </div>
+                <h3>
+                    <a href="https://bt.rozetka.com.ua/ua/beko-7003740002plus7189731990plusb3t68239mg/p400194879/" target="_blank" rel="noopener noreferrer">
+                        Пральна машина BEKO + Сушильний автомат BEKO
+                    </a>
+                </h3>
+                <div class="box_price">
+                    <p class="discount">28 000 грн</p>
+                    <p class="price">25 000 грн</p>
+                </div>
+                <button class="button add-to-cart" data-id="2">У корзину</button>
+            </div>
+            
+            <div class="box_good" data-id="3" data-name="Пральна машина Samsung" data-price="18000">
+                <div class="label">Хіт продажів</div>
+                <div class="catagory">
+                    <h2>Samsung</h2>
+                </div>
+                <hr>
+                <div class="box_img">
+                    <img src="./img/machine_2.png" alt="Пральна машина Samsung">
+                </div>
+                <h3>
+                    <a href="https://comfy.ua/ua/stiral-naja-mashina-samsung-ww70agas22aeua.html" target="_blank" rel="noopener noreferrer">
+                        Пральна машина Samsung
+                    </a>
+                </h3>
+                <div class="box_price">
+                    <p class="price">18 000 грн</p>
+                </div>
+                <button class="button add-to-cart" data-id="3">У корзину</button>
+            </div>
+            
+            <div class="box_good" data-id="4" data-name="Пральна машина Bosch" data-price="22000">
+                <div class="label">Хіт продажів</div>
+                <div class="catagory">
+                    <h2>Bosch</h2>
+                </div>
+                <hr>
+                <div class="box_img">
+                    <img src="./img/machine_3.png" alt="Пральна машина Bosch">
+                </div>
+                <h3>
+                    <a href="https://comfy.ua/ua/stiral-naja-mashina-bosch-wan28280ua.html" target="_blank" rel="noopener noreferrer">
+                        Пральна машина Bosch
+                    </a>
+                </h3>
+                <div class="box_price">
+                    <p class="price">22 000 грн</p>
+                </div>
+                <button class="button add-to-cart" data-id="4">У корзину</button>
+            </div>
+            
+            <div class="slide right">&gt;</div>
+        </div>
+    </main>
+
+    <div id="quantityModal" class="modal">
+        <div class="modal-content">
+            <h3>Вкажіть кількість:</h3>
+            <input type="number" id="quantityInput" min="1" value="1" class="modal-input">
+            <div class="modal-buttons">
+                <button id="confirmAdd" class="modal-button confirm">Додати до корзини</button>
+                <button class="modal-button cancel close-modal">Скасувати</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <h3>Товар додано</h3>
+            <div class="modal-buttons">
+                <button id="goToCart" class="modal-button confirm">Перейти у корзину</button>
+                <button id="continueShopping" class="modal-button cancel">Повернутись до покупок</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="emptyCartModal" class="modal">
+        <div class="modal-content">
+            <h3>Корзина пуста</h3>
+            <div class="modal-buttons">
+                <button class="modal-button cancel close-modal">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/scripts/script.js"></script>
+</body>
+</html>

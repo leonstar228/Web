@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кошик покупок</title>
+    <link rel="stylesheet" href="./assets/styles/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">Магазин техніки</a>
+        <div class="cart-icon" id="cartIcon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </div>
+    </header>
+
+    <div class="cart-container">
+        <h1 class="cart-title">Ваш кошик</h1>
+        
+        <div id="cartContent">
+        </div>
+        
+        <div class="cart-actions">
+            <a href="index.html" class="action-button back-button">
+                <i class="fas fa-arrow-left"></i> Повернутись до покупок
+            </a>
+            <button id="checkoutButton" class="action-button checkout-button">
+                <i class="fas fa-credit-card"></i> Оплатити
+            </button>
+        </div>
+    </div>
+
+    <script src="./assets/scripts/cart.js"></script>
+</body>
+</html>

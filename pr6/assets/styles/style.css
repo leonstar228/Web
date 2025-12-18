@@ -1,0 +1,317 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    position: relative;
+}
+
+/* ------------------ Header & Cart Icon ------------------ */
+.header {
+    position: relative;
+    padding: 20px;
+    text-align: right;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cart-icon {
+    font-size: 24px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.cart-icon:hover {
+    color: #008cff;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #ff0000;
+    color: white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+main{
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ------------------ Text formating ------------------ */
+h1, h2, h3, p, button, .label {
+    text-transform: uppercase;
+}
+
+h1{
+    margin: 70px 0;
+    font-weight: 500;
+    color: #333;
+}
+h2{
+    color: #666;
+    font-size: 17pt;
+}
+h3{
+    color: rgb(0, 140, 255);
+    flex-grow: 1;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* ------------------ Container ------------------ */
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin: 50px 0;
+    border: 1px solid rgb(200, 200, 200);
+    background-color: white;
+}
+.box_good{
+    flex: 1;
+    border: 1px solid rgb(200, 200, 200);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.box_good:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+/* ------------------ Catagory ------------------ */
+.catagory{
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+hr{
+    height: 1px;
+    border: none;
+    background-color: rgb(200, 200, 200);
+    width: 80%;
+}
+
+/* ------------------ Images ------------------ */
+.box_img{
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+img{
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+.box_good:hover img {
+    transform: scale(1.05);
+}
+
+/* ------------------ Prices ------------------ */
+.box_price{
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    font-weight: 600;
+    height: 25px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+.discount{
+    font-size: 20px;
+    text-decoration: line-through;
+    color: #999;
+}
+.price{
+    font-size: 25px;
+    line-height: 25px;
+    color: #333;
+}
+
+/* ------------------ Buttons ------------------ */
+.button{
+    width: 150px;
+    height: 50px;
+    background-color: rgb(255, 225, 0);
+    margin-bottom: 30px;
+    border: none;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+.button:hover {
+    background-color: rgb(230, 200, 0);
+}
+.add-to-cart {
+    margin-top: auto;
+}
+.coming_soon{
+    background-color: rgb(220, 23, 160);
+    color: white;
+}
+
+/* ------------------ Slides ------------------ */
+.slide{
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgb(200, 200, 200);
+    border-radius: 50%;
+    display: flex;
+    color: rgb(200, 200, 200);
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    z-index: 1;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.slide:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+.left{
+    left: -20px;
+}
+.right{
+    right: -20px;
+}
+
+/* ------------------ Labels ------------------ */
+.label{
+    width: 80px;
+    height: 80px;
+    background-color: rgb(0, 140, 255);
+    position: absolute;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    top: -40px;
+    right: 10px;
+    border: 5px solid white;
+    font-weight: bold;
+    z-index: 2;
+}
+.new{
+    background-color: rgb(129, 171, 43);
+}
+
+/* ------------------ Modal Windows ------------------ */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: slideIn 0.3s;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-content h3 {
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: none;
+    font-size: 20px;
+}
+
+.modal-input {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.modal-button.confirm {
+    background-color: #008cff;
+    color: white;
+}
+
+.modal-button.confirm:hover {
+    background-color: #0077d9;
+}
+
+.modal-button.cancel {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.modal-button.cancel:hover {
+    background-color: #e0e0e0;
+}
