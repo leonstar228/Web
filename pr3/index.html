@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична робота №3 - Дата та час в JavaScript</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Практична робота №3</h1>
+            <div class="subtitle">Тема: Робота з датою та часом у JavaScript</div>
+            <p>Мета: набути практичних навиків при використанні методів для управління датою і часом</p>
+        </header>
+        
+        <div class="task-container">
+            <div class="task">
+                <div class="task-header">
+                    <div class="task-number">1</div>
+                    <div class="task-title">Створення об'єкта Date</div>
+                </div>
+                <div class="task-description">
+                    Створити об'єкт Date на дату: <strong>20 лютого 2021, 3:12 ранку</strong>. Часовий пояс є місцевим.
+                </div>
+                <div class="code-block">const date1 = new Date(2021, 1, 20, 3, 12, 0);</div>
+                <div class="result">
+                    <span class="result-label">Результат:</span>
+                    <span class="result-value" id="result1"></span>
+                </div>
+            </div>
+            
+            <div class="task">
+                <div class="task-header">
+                    <div class="task-number">2</div>
+                    <div class="task-title">Функція getWeekDay()</div>
+                </div>
+                <div class="task-description">
+                    Напишіть функцію <strong>getWeekDay(date)</strong> для показу робочого дня у короткому форматі.
+                </div>
+                <div class="code-block">function getWeekDay(date) {
+    const days = ['НД', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
+    return days[date.getDay()];
+}</div>
+                <div class="result">
+                    <span class="result-label">Результат для 3 січня 2012:</span>
+                    <span class="result-value" id="result2"></span>
+                </div>
+            </div>
+            
+            <div class="task">
+                <div class="task-header">
+                    <div class="task-number">3</div>
+                    <div class="task-title">Функція getLastDayOfMonth()</div>
+                </div>
+                <div class="task-description">
+                    Напишіть функцію <strong>getLastDayOfMonth(year, month)</strong>, що повертає останній день місяця.
+                </div>
+                <div class="code-block">function getLastDayOfMonth(year, month) {
+    const date = new Date(year, month + 1, 0);
+    return date.getDate();
+}</div>
+                <div class="result">
+                    <span class="result-label">Результат для лютого 2020:</span>
+                    <span class="result-value" id="result3"></span>
+                </div>
+            </div>
+            
+            <div class="task">
+                <div class="task-header">
+                    <div class="task-number">4</div>
+                    <div class="task-title">Функція getSecondsToTomorrow()</div>
+                </div>
+                <div class="task-description">
+                    Створіть функцію <strong>getSecondsToTomorrow()</strong>, що повертає кількість секунд до завтра.
+                </div>
+                <div class="code-block">function getSecondsToTomorrow() {
+    const now = new Date();
+    const tomorrow = new Date(now.getFullYear(), 
+                               now.getMonth(), 
+                               now.getDate() + 1);
+    return Math.round((tomorrow - now) / 1000);
+}</div>
+                <div class="result">
+                    <span class="result-label">Поточне значення:</span>
+                    <span class="result-value" id="result4"></span>
+                </div>
+            </div>
+            
+            <div class="task">
+                <div class="task-header">
+                    <div class="task-number">5</div>
+                    <div class="task-title">Функція formatDate()</div>
+                </div>
+                <div class="task-description">
+                    Напишіть функцію <strong>formatDate(date)</strong>, яка форматує дату за вказаними правилами.
+                </div>
+                <div class="code-block">function formatDate(date) {
+    const now = new Date();
+    const diff = Math.round((now - date) / 1000);
+    
+    if (diff < 1) return "прямо заразу";
+    if (diff < 60) return `${diff} сек. назад`;
+    if (diff < 3600) return `${Math.floor(diff / 60)} хв. назад`;
+    
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = String(date.getFullYear()).slice(-2);
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    
+    return `${day}.${month}.${year} ${hours}:${minutes}`;
+}</div>
+                <div class="result">
+                    <span class="result-label">Тест для різних проміжків:</span>
+                    <div class="result-value" id="result5"></div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Практична робота №3 - Робота з датою та часом у JavaScript</p>
+        </footer>
+    </div>
+
+    <script src="./assets/scripts/task1.js"></script>
+    <script src="./assets/scripts/task2.js"></script>
+    <script src="./assets/scripts/task3.js"></script>
+    <script src="./assets/scripts/task4.js"></script>
+    <script src="./assets/scripts/task5.js"></script>
+</body>
+</html>
